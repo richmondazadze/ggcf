@@ -586,7 +586,7 @@
 }
 
 .text-justify {
-    text-align: justify !important;
+    text-align: left !important;
 }
 
 .impact-stories-row .causes-item {
