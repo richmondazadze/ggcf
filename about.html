@@ -278,6 +278,37 @@
             transform: translateY(-6px) scale(1.025);
             z-index: 2;
         }
+        .founder-email {
+            color: #fff;
+            opacity: 0.95;
+            font-size: 1rem;
+            font-weight: 400;
+            text-decoration: underline;
+            transition: opacity 0.2s;
+            display: inline-flex;
+            align-items: center;
+        }
+        .founder-email:hover {
+            opacity: 1;
+        }
+        .founder-social {
+            color: #FF6F0F;
+            font-size: 1.2rem;
+            margin-left: 0.5rem;
+            transition: color 0.2s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .founder-social:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.2);
+        }
     </style>
 
     <main>
@@ -302,7 +333,7 @@
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="position-relative overflow-hidden h-100 about-img-container" style="min-height: 400px;">
                             <img class="position-absolute w-100 h-100 pt-5 pe-5 about-img-main rounded-4" src="img/about-1.jpg" alt="Good God Charity Foundation team supporting children in Ghana" style="object-fit: cover;">
-                        </div>
+                    </div>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="h-100">
@@ -337,15 +368,17 @@
                     <div class="col-md-4 text-center position-relative mb-4 mb-md-0">
                         <img src="img/Theo.png" alt="Theophilus Mensah, Founder of Good God Charity Foundation" class="img-fluid rounded-circle founder-img gold-border shadow-lg">
                         <div class="founder-overlay founder-overlay-brand position-static mt-3" style="position:static;transform:none;left:auto;bottom:auto;">
-                            <span class="founder-name">Founder &amp; President</span>
-                            <span class="founder-title">theophilusynagogue@gmail.com</span>
-                            <a href="https://www.linkedin.com/in/-theophilusmensah/" class="founder-social ms-2" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <span class="founder-name">Theophilus Mensah</span>
+                            <span class="founder-title">Founder &amp; President</span>
+                            <div class="d-flex flex-column align-items-center">
+                                <a href="mailto:theophilusynagogue@gmail.com" class="founder-email mb-2">theophilusynagogue@gmail.com</a>
+                                <a href="https://www.linkedin.com/in/-theophilusmensah/" class="founder-social" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-8">
                         <div class="founder-quote-box">
-                            <span class="founder-quote-text">“Every act of kindness plants a seed of hope. At the Good God Charity Foundation, our calling is to deliver help, healing, and love to those who need it most.”</span>
-                            <div class="founder-quote-footer mt-3">— Theophilus Mensah, Founder</div>
+                            <span class="founder-quote-text">“Every act of kindness plants a seed of hope. At the Good God Charity Foundation, our calling is to deliver help, and love to those who need it most.”</span>
                         </div>
                     </div>
                 </div>
@@ -444,8 +477,8 @@
 
         <!-- Service Start -->
         <section class="container-xxl py-5" id="impact" aria-labelledby="mission-section-title">
-            <div class="container">
-                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
                     <div class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">Our Mission</div>
                     <h2 id="mission-section-title" class="display-6 mb-3">Supporting Child Health and Education</h2>
                     <p class="lead text-dark mb-5">Every child deserves a chance to grow, to learn, and to live a healthy life</p>
@@ -457,8 +490,8 @@
                                 <i class="fas fa-hands-helping fa-3x text-white" aria-hidden="true"></i>
                             </div>
                             <h3 class="mb-3">Our Mission</h3>
-                            <p class="mb-4"><span style="color: #030806; font-weight: 800;">Our mission is to give hope to those who need it most.</span> We are committed to addressing the needs of children, students, orphanages, schools, and abandoned pregnant women in hospitals. Our foundation aims to improve the lives of children and underrepresented families by providing vital support in healthcare and education.</p>
-                        </div>
+                            <p class="mb-4"><span style="color: #00704A !important; font-weight: 900 !important; font-size: 1.1em !important;">Our mission is to give hope to those who need it most.</span> We are committed to addressing the needs of children, students, orphanages, schools, and abandoned pregnant women in hospitals. Our foundation aims to improve the lives of children and underrepresented families by providing vital support in healthcare and education.</p>
+                    </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                         <div class="service-item bg-white text-center h-100 p-4 p-xl-5 rounded-4">
@@ -466,8 +499,8 @@
                                 <i class="fas fa-lightbulb fa-3x text-white" aria-hidden="true"></i>
                             </div>
                             <h3 class="mb-3">Our Vision</h3>
-                            <p class="mb-4"><span style="color: #030806; font-weight: 600;">We envision a world where every child has access to the essential resources they need to thrive.</span> Our vision is to bring hope to those in low-income and underrepresented families by providing consistent support that fosters their well-being. Whether it's providing educational materials, healthcare equipment, or basic life necessities, we believe our efforts will create a ripple effect that uplifts entire communities.</p>
-                        </div>
+                            <p class="mb-4"><span style="color: #00704A !important; font-weight: 900 !important; font-size: 1.1em !important;">We envision a world where every child has access to the essential resources they need to thrive.</span> Our vision is to bring hope to those in low-income and underrepresented families by providing consistent support that fosters their well-being. Whether it's providing educational materials, healthcare equipment, or basic life necessities, we believe our efforts will create a ripple effect that uplifts entire communities.</p>
+                    </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                         <div class="service-item bg-white text-center h-100 p-4 p-xl-5 rounded-4">
@@ -475,7 +508,7 @@
                                 <i class="fas fa-users fa-3x text-white" aria-hidden="true"></i>
                             </div>
                             <h3 class="mb-3">Who We Serve</h3>
-                            <p class="mb-4"><span style="color: #030806; font-weight: 600;">The Good God Charity Foundation targets orphanages, schools, and hospitals in need of critical support.</span> We assist abandoned pregnant women who lack the means to care for themselves and their unborn babies, as well as orphans and children in need of clothing, food, and educational materials. Our focus extends to supporting low-income families who require assistance with healthcare, schooling, and daily living.</p>
+                            <p class="mb-4"><span style="color: #00704A !important; font-weight: 900 !important; font-size: 1.1em !important;">The Good God Charity Foundation targets orphanages, schools, and hospitals in need of critical support.</span> We assist abandoned pregnant women who lack the means to care for themselves and their unborn babies, as well as orphans and children in need of clothing, food, and educational materials. Our focus extends to supporting low-income families who require assistance with healthcare, schooling, and daily living.</p>
                         </div>
                     </div>
                 </div>

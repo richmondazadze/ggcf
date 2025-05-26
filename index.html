@@ -287,6 +287,26 @@
         .navbar-gradient {
             background: linear-gradient(90deg, #0F172B 0%, #00704A 100%) !important;
         }
+        .real-change-title {
+            font-size: 5rem;
+            font-weight: 1000;
+            color: #00704A;
+            width: 100%;
+        }
+        @media (max-width: 767.98px) {
+            .real-change-title {
+                font-size: 2.5rem;
+                margin-top: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+        }
+        @media (max-width: 575.98px) {
+            .real-change-title {
+                font-size: 2rem;
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+            }
+        }
     </style>
 
     <main>
@@ -398,7 +418,7 @@
                     <div class="d-inline-flex align-items-center justify-content-center bg-primary rounded-circle mb-3" style="width: 64px; height: 64px;">
                       <i class="fas fa-graduation-cap fa-2x text-white" aria-hidden="true"></i>
                     </div>
-                    <div class="display-5 fw-bold mb-2" style="color: #00704A;">600+</div>
+                    <div class="display-5 fw-bold mb-2" style="color: #00704A;"><span class="countup" data-target="600">0</span>+</div>
                     <div class="fs-5" style="color: #222; font-weight: 500;">School children supported with educational resources</div>
                   </div>
                 </div>
@@ -407,7 +427,7 @@
                     <div class="d-inline-flex align-items-center justify-content-center bg-primary rounded-circle mb-3" style="width: 64px; height: 64px;">
                       <i class="fas fa-baby fa-2x text-white" aria-hidden="true"></i>
                     </div>
-                    <div class="display-5 fw-bold mb-2" style="color: #00704A;">70+</div>
+                    <div class="display-5 fw-bold mb-2" style="color: #00704A;"><span class="countup" data-target="70">0</span>+</div>
                     <div class="fs-5" style="color: #222; font-weight: 500;">Mothers and newborns assisted with healthcare</div>
                   </div>
             </div>
@@ -416,7 +436,7 @@
                     <div class="d-inline-flex align-items-center justify-content-center bg-primary rounded-circle mb-3" style="width: 64px; height: 64px;">
                       <i class="fas fa-home fa-2x text-white" aria-hidden="true"></i>
                             </div>
-                    <div class="display-5 fw-bold mb-2" style="color: #00704A;">50+</div>
+                    <div class="display-5 fw-bold mb-2" style="color: #00704A;"><span class="countup" data-target="50">0</span>+</div>
                     <div class="fs-5" style="color: #222; font-weight: 500;">Families provided with essential aid</div>
                                 </div>
                                     </div>
@@ -431,7 +451,7 @@
             <div class="container">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
                     <div class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">Our Story</div>
-                    <p class="lead text-black mb-3" style="font-size:2.25rem;">Real smiles. Real change.</p>
+                    <p class="mb-1 real-change-title">Real smiles.<br> Real change.</p>
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-lg-10 wow fadeInUp" data-wow-delay="0.3s">
@@ -543,8 +563,8 @@
                             <div class="d-inline-flex align-items-center justify-content-center bg-light rounded-circle mb-4" style="width: 100px; height: 100px;">
                                 <i class="fa fa-heart fa-2x text-primary" aria-hidden="true"></i>
                             </div>
-                            <h3 class="mb-3">Orphanage & Widow Support</h3>
-                            <p class="mb-4">We bring practical help and spiritual hope to vulnerable communities. Through multiple donation drives, we've supplied food, clothing, and hygiene essentials to orphanages like Kumasi Children's Home, and to widows in need. Each visit brings healing, dignity, and the love of Christ in action.</p>
+                            <h3 class="mb-3">Orphanage & Child Support</h3>
+                            <p class="mb-4">We bring practical help and hope to vulnerable children and families. Through multiple donation drives, we've supplied food, clothing, and hygiene essentials to orphanages like Kumasi Children's Home, and to children in need. Each visit brings healing, dignity, and the love of Christ in action.</p>
                             <a class="btn btn-outline-primary px-4" href="">Learn More</a>
                         </div>
                     </div>
@@ -644,6 +664,58 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script>
+    // Count up animation for Impact at a Glance
+    function animateCountUp(el, target, duration = 1800) {
+      let start = 0;
+      let startTime = null;
+      function animate(timestamp) {
+        if (!startTime) startTime = timestamp;
+        const progress = Math.min((timestamp - startTime) / duration, 1);
+        el.textContent = Math.floor(progress * (target - start) + start);
+        if (progress < 1) {
+          requestAnimationFrame(animate);
+        } else {
+          el.textContent = target;
+        }
+      }
+      requestAnimationFrame(animate);
+    }
+
+    function runCountUps() {
+      document.querySelectorAll('.countup').forEach(function(el) {
+        const target = parseInt(el.getAttribute('data-target'), 10);
+        animateCountUp(el, target);
+      });
+    }
+
+    // Trigger when section is in view
+    function isInViewport(element) {
+      const rect = element.getBoundingClientRect();
+      return (
+        rect.top < window.innerHeight &&
+        rect.bottom > 0
+      );
+    }
+
+    let impactAnimated = false;
+    window.addEventListener('scroll', function() {
+      if (impactAnimated) return;
+      const section = document.getElementById('impact-highlights-title');
+      if (section && isInViewport(section)) {
+        runCountUps();
+        impactAnimated = true;
+      }
+    });
+    // Also run on load in case already in view
+    window.addEventListener('DOMContentLoaded', function() {
+      const section = document.getElementById('impact-highlights-title');
+      if (section && isInViewport(section)) {
+        runCountUps();
+        impactAnimated = true;
+      }
+    });
+    </script>
 </body>
 
 </html>
