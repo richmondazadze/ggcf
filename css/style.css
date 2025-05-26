@@ -708,3 +708,9 @@
         bottom: 4px;
     }
 }
+
+.btn.back-to-top, .btn-lg-square.back-to-top {
+    bottom: 80px !important;
+    right: 24px !important;
+    z-index: 1051;
+}
