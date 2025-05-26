@@ -274,35 +274,35 @@
     </style>
 
     <main>
-        <!-- Page Header Start -->
+    <!-- Page Header Start -->
         <section class="container-fluid page-header mb-5 wow fadeIn" data-wow-delay="0.1s" style="background: linear-gradient(rgba(0, 29, 35, .8), rgba(0, 29, 35, .8)), url('img/carousel-3.jpg') center center no-repeat; background-size: cover;">
-            <div class="container text-center">
-                <h1 class="display-4 text-white animated slideInDown mb-4">Donate to Good God Charity Foundation in Ghana</h1>
-                <nav aria-label="breadcrumb animated slideInDown">
-                    <ol class="breadcrumb justify-content-center mb-0">
+        <div class="container text-center">
+                <h1 class="display-4 text-white animated slideInDown mb-4">Donate to Good God Charity Foundation</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb justify-content-center mb-0">
                         <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
-                        <li class="breadcrumb-item text-primary active" aria-current="page">Donate</li>
-                    </ol>
-                </nav>
-            </div>
+                    <li class="breadcrumb-item text-primary active" aria-current="page">Donate</li>
+                </ol>
+            </nav>
+        </div>
         </section>
-        <!-- Page Header End -->
+    <!-- Page Header End -->
 
-        <!-- Donate Start -->
+    <!-- Donate Start -->
         <section class="container-xxl py-5" aria-labelledby="donate-section-title">
-            <div class="container">
+        <div class="container">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
                     <div class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">Make a Difference</div>
-                    <h2 id="donate-section-title" class="display-6 mb-5">Your Donation Makes a Real Impact</h2>
+                    <h2 id="donate-section-title" class="display-6 mb-5">Be the reason a child smiles today</h2>
                 </div>
                 <div class="row g-4">
                     <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="bg-white p-5 rounded">
                             <h3 class="mb-4">Choose Your Impact</h3>
-                            <form action="https://formspree.io/f/mldbyjpg" method="POST">
-                                <div class="row g-3">
-                                    <div class="col-12">
-                                        <div class="form-floating">
+                            <form id="donate-form" action="#" method="POST">
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <div class="form-floating">
                                             <select class="form-select" id="donationType" name="donationType">
                                                 <option value="healthcare">Child Healthcare</option>
                                                 <option value="education">Educational Support</option>
@@ -314,22 +314,22 @@
                                     <div class="col-12">
                                         <div class="form-floating">
                                             <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
-                                            <label for="name">Your Name</label>
-                                        </div>
+                                        <label for="name">Your Name</label>
                                     </div>
-                                    <div class="col-12">
-                                        <div class="form-floating">
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
                                             <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
-                                            <label for="email">Your Email</label>
-                                        </div>
+                                        <label for="email">Your Email</label>
                                     </div>
-                                    <div class="col-12">
+                                </div>
+                                <div class="col-12">
                                         <div class="form-floating">
                                             <input type="text" class="form-control" id="amount" name="amount" placeholder="Amount" required>
                                             <label for="amount">Amount ($)</label>
-                                        </div>
                                     </div>
-                                    <div class="col-12">
+                                </div>
+                                <div class="col-12">
                                         <div class="form-check">
                                             <input class="form-check-input" type="checkbox" id="monthly" name="monthly">
                                             <label class="form-check-label" for="monthly">
@@ -348,14 +348,18 @@
                         <div class="bg-white p-5 rounded">
                             <h3 class="mb-4">Your Impact</h3>
                             <div class="impact-mission text-center" style="max-width: 500px; margin: 0 auto;">
-                                <p class="fs-5 mb-4" style="color: #222;">Every act of generosity helps us:</p>
-                                <ul class="list-unstyled mb-4 text-start mx-auto" style="max-width: 420px;">
-                                    <li class="mb-3 d-flex align-items-start"><span class="text-primary me-2" style="font-size:1.2em;">&#10003;</span> <span>Provide school supplies and educational support to children in need</span></li>
-                                    <li class="mb-3 d-flex align-items-start"><span class="text-primary me-2" style="font-size:1.2em;">&#10003;</span> <span>Deliver essential medical care and health education to underserved communities</span></li>
-                                    <li class="mb-3 d-flex align-items-start"><span class="text-primary me-2" style="font-size:1.2em;">&#10003;</span> <span>Support widows, orphans, and vulnerable families with food, clothing, and hope</span></li>
-                                    <li class="mb-3 d-flex align-items-start"><span class="text-primary me-2" style="font-size:1.2em;">&#10003;</span> <span>Build stronger, healthier communities through outreach and compassion</span></li>
+                                <p class="fs-5 mb-2" style="color: #222; font-weight: 600;">
+                                    Too many children today face life without the basics:
+                                </p>
+                                <ul class="list-unstyled mb-2" style="font-size: 1rem; color: #222; line-height: 1.7; text-align: left; display: inline-block; list-style-type: disc; padding-left: 1.2em;">
+                                    <li style="color: #222;margin-bottom: 10px;"><strong>No access to medical care</strong>—when sickness or injury strikes, there's no doctor, no medicine, and no safe place to heal.</li>
+                                    <li style="color: #222;margin-bottom: 10px;"><strong>No books or school supplies</strong>—eager minds are left behind, unable to learn, grow, or dream of a brighter future.</li>
+                                    <li style="color: #222;margin-bottom: 10px;"><strong>No support or encouragement</strong>—many children lack the guidance, mentorship, and emotional support every child deserves.</li>
+                                    <li style="color: #222;margin-bottom: 10px;"><strong>Facing daily uncertainty</strong>—each day brings new challenges: hunger, illness, and the struggle to simply get by.</li>
                                 </ul>
-                                <p class="fw-bold fs-5 mt-4" style="color: #00704A;">Together, we are changing lives and building a brighter future for Ghana's children and families.</p>
+                                <p class="fw-bold fs-5 mt-4" style="color: #00704A;">
+                                    With your help, we can change this story—one child at a time.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -363,6 +367,13 @@
             </div>
         </section>
         <!-- Donate End -->
+
+        <!-- Add this message before the payment methods section -->
+        <div class="d-flex justify-content-center my-5">
+            <div style="background: #fff; border-left: 6px solid #00B98E; border-radius: 0.75rem; padding: 1.2rem 2rem; max-width: 600px; box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
+                <span style="font-size: 1.45rem; font-weight: 800; color: #00704A; letter-spacing: 0.5px; font-family: 'Raleway', 'Questrial', sans-serif;">Together, we are changing lives and building a brighter future for children and families.</span>
+            </div>
+        </div>
 
         <!-- Payment Options Start -->
         <section class="container-xxl py-5" aria-labelledby="payment-section-title">
@@ -373,7 +384,7 @@
                 </div>
                 <div class="row g-4 justify-content-center">
                     <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="service-item bg-white text-center h-100 p-4 p-xl-5">
+                        <div class="service-item bg-white text-center h-100 p-4 p-xl-5 rounded-4">
                             <div class="d-inline-flex align-items-center justify-content-center bg-primary rounded-circle mb-4" style="width: 80px; height: 80px;">
                                 <i class="fab fa-paypal fa-3x text-white" aria-hidden="true"></i>
                             </div>
@@ -388,7 +399,7 @@
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="service-item bg-white text-center h-100 p-4 p-xl-5">
+                        <div class="service-item bg-white text-center h-100 p-4 p-xl-5 rounded-4">
                             <div class="d-inline-flex align-items-center justify-content-center bg-primary rounded-circle mb-4" style="width: 80px; height: 80px;">
                                 <i class="fas fa-mobile-alt fa-3x text-white" aria-hidden="true"></i>
                             </div>
@@ -398,10 +409,16 @@
                                 <p class="mb-1"><strong>Number:</strong> +233(0)508812184 (Telecel)</p>
                                 <p class="mb-0"><strong>Name:</strong> Theophilus Mensah</p>
                             </div>
-                        </div>
-                    </div>
+                            <div class="d-flex align-items-center justify-content-center mb-3" style="gap: 1.5rem;">
+                                <img src="/img/remitly.png" alt="Remitly" style="height: 32px; width: auto;">
+                                <img src="/img/taptap.png" alt="Taptap Send" style="height: 32px; width: auto;">
+                                <img src="/img/lemfi.png" alt="Lemfi" style="height: 32px; width: auto;">
+                            </div>
+                            <p class="text-center mb-0" style="font-size: 1.05rem; color: #00704A;">Payments can be made to the mobile money account directly using Remitly, Taptap Send, or Lemfi.</p>
                 </div>
             </div>
+        </div>
+    </div>
         </section>
         <!-- Payment Options End -->
 
@@ -412,38 +429,31 @@
                     <div class="d-inline-block rounded-pill bg-secondary text-primary py-1 px-3 mb-3">Transparency</div>
                     <h2 id="transparency-section-title" class="display-6 mb-5">How Your Donation Makes a Difference</h2>
                 </div>
-                <div class="row g-4">
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="service-item bg-white text-center h-100 p-4 p-xl-5">
-                            <img class="img-fluid mb-4" src="img/icon-1.png" alt="Child Healthcare - medical supplies and equipment for hospitals and clinics in Ghana">
+                <div class="row g-4 justify-content-center">
+                    <div class="col-lg-5 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item bg-white text-center h-100 p-4 p-xl-5 rounded-4">
+                            <div class="d-inline-flex align-items-center justify-content-center bg-primary rounded-circle mb-4" style="width: 80px; height: 80px;">
+                                <i class="fas fa-stethoscope fa-3x text-white" aria-hidden="true"></i>
+                            </div>
                             <h3 class="mb-3 h4">Child Healthcare</h3>
                             <p class="mb-4">Your donations provide essential medical supplies and equipment to hospitals and clinics, improving child health and wellness.</p>
                             <div class="progress mb-4" style="height: 10px;">
-                                <div class="progress-bar bg-primary" role="progressbar" style="width: 90%"></div>
+                                <div class="progress-bar bg-primary" role="progressbar" style="width: 60%"></div>
                             </div>
-                            <p class="mb-0">90% of funds go directly to programs</p>
+                            <p class="mb-0">60% of funds go directly to child healthcare programs</p>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="service-item bg-white text-center h-100 p-4 p-xl-5">
-                            <img class="img-fluid mb-4" src="img/icon-2.png" alt="Educational Support - materials and resources for underprivileged students in Ghana">
+                    <div class="col-lg-5 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="service-item bg-white text-center h-100 p-4 p-xl-5 rounded-4">
+                            <div class="d-inline-flex align-items-center justify-content-center bg-primary rounded-circle mb-4" style="width: 80px; height: 80px;">
+                                <i class="fas fa-graduation-cap fa-3x text-white" aria-hidden="true"></i>
+                            </div>
                             <h3 class="mb-3 h4">Educational Support</h3>
-                            <p class="mb-4">Supporting underprivileged students with educational materials, resources, and assistance programs.</p>
+                            <p class="mb-4">Supporting underprivileged students with educational materials, resources, and assistance programs—empowering them to learn and grow</p>
                             <div class="progress mb-4" style="height: 10px;">
-                                <div class="progress-bar bg-primary" role="progressbar" style="width: 85%"></div>
+                                <div class="progress-bar bg-primary" role="progressbar" style="width: 40%"></div>
                             </div>
-                            <p class="mb-0">85% of funds go directly to programs</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="service-item bg-white text-center h-100 p-4 p-xl-5">
-                            <img class="img-fluid mb-4" src="img/icon-3.png" alt="Community Outreach - fundraising events and campaigns in Ghana">
-                            <h3 class="mb-3 h4">Community Outreach</h3>
-                            <p class="mb-4">Organizing impactful fundraising events and campaigns while engaging community members in our mission.</p>
-                            <div class="progress mb-4" style="height: 10px;">
-                                <div class="progress-bar bg-primary" role="progressbar" style="width: 88%"></div>
-                            </div>
-                            <p class="mb-0">88% of funds go directly to programs</p>
+                            <p class="mb-0">40% of funds go directly to edu. support programs</p>
                         </div>
                     </div>
                 </div>
@@ -514,6 +524,25 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var donateForm = document.getElementById('donate-form');
+      if (donateForm) {
+        donateForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          var amount = donateForm.querySelector('input[name="amount"]').value;
+          amount = parseFloat(amount);
+          if (!amount || amount <= 0) {
+            alert('Please enter a valid donation amount.');
+            return;
+          }
+          // PayPal.me link with amount
+          var paypalUrl = 'https://www.paypal.me/THEOPHILUSMENSAH669/' + encodeURIComponent(amount);
+          window.open(paypalUrl, '_blank');
+        });
+      }
+    });
+    </script>
 </body>
 
 </html>
