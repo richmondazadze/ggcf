@@ -291,6 +291,14 @@ for n in ORIGINAL:
  if n=='about':
   team=root.select_one('[data-section="team"]').extract()
   team.select_one('.eyebrow').decompose();team.find('h2').decompose();team['aria-labelledby']='team-title'
+  for card in team.select('.card'):
+   card['class']+=['team-card'];copy=BeautifulSoup('<div class="team-card-copy flow"></div>','html.parser').div
+   for child in list(card.contents):
+    if getattr(child,'name',None)!='img':copy.append(child.extract())
+   card.append(copy)
+   img=card.find('img')
+   if img:img['sizes']='(max-width: 760px) calc(100vw - 48px), (max-width: 1100px) calc((100vw - 104px) / 2), 410px'
+
   TEAM_BODY=f'<div class="page-content"><header class="team-intro shell"><a class="story-back" href="about.html">← About the foundation</a><h1 id="team-title">Our Team</h1></header>{team}</div>'
   teaser=BeautifulSoup('<section class="section team-teaser" aria-labelledby="meet-team-title"><div class="shell"><div><p class="eyebrow">Our Team</p><h2 id="meet-team-title">Meet Our Team</h2><p>Dedicated leaders and coordinators working together to bring hope and change.</p></div><a class="button button-outline" href="team.html">Meet the team <span aria-hidden="true">↗</span></a></div></section>','html.parser').section
   root.append(teaser)
