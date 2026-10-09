@@ -254,6 +254,21 @@ def refine(root,n):
  for img in root.find_all('img'):
   for child in reversed(list(img.contents)):img.insert_after(child.extract())
  return root
+def vector_arrows(html):
+ document=BeautifulSoup(html,'html.parser')
+ paths={'↗':'M5 19 19 5M5 5h14v14','↑':'M12 20V4M5 11l7-7 7 7','←':'M20 12H4M11 5l-7 7 7 7','→':'M4 12h16M13 5l7 7-7 7'}
+ for node in list(document.find_all(string=True)):
+  if node.parent.name in ['script','style']:continue
+  if not any(char in str(node) for char in paths):continue
+  for part in re.split('([↗↑←→])',str(node)):
+   if not part:continue
+   if part in paths:
+    icon=BeautifulSoup(f'<svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="{paths[part]}"></path></svg>','html.parser').svg
+    node.insert_before(icon)
+   else:node.insert_before(NavigableString(part))
+  node.extract()
+ return str(document)
+
 portrait=Image.open(OUT/'assets/theo_mensah.png').convert('RGB')
 for width in [480,800]:
  target=OUT/'assets'/('theo_mensah.webp' if width==800 else 'theo_mensah-480.webp')
@@ -269,12 +284,12 @@ for n in ORIGINAL:
    sec['aria-labelledby']=h['id']
  title=ORIGINAL[n].title.get_text();description=ORIGINAL[n].find('meta',attrs={'name':'description'})
  html=f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>{escape(title)}</title><meta name="description" content="{escape(description.get('content','') if description else '')}"><link rel="icon" href="../img/favicon.png"><link rel="preload" href="../fonts/switzer-500.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="../fonts/clash-display-600.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="../css/fonts.css"><link rel="stylesheet" href="assets/site.css?v={hashlib.sha256((OUT/'assets/site.css').read_bytes()).hexdigest()[:10]}"><script defer src="assets/site.js?v={hashlib.sha256((OUT/'assets/site.js').read_bytes()).hexdigest()[:10]}"></script></head><body data-page="{n}">{header(n)}<main id="main" tabindex="-1">{root}</main>{footer()}</body></html>'''
- (OUT/(n+'.html')).write_text(html)
+ (OUT/(n+'.html')).write_text(vector_arrows(html))
 for filename,title,body in STORY_PAGES:
  document=BeautifulSoup((OUT/'about.html').read_text(),'html.parser')
  document.title.string=title+' | Good God Charity Foundation'
  document.find('meta',attrs={'name':'description'})['content']=title+' — Good God Charity Foundation impact story.'
  document.main.clear();document.main.append(BeautifulSoup(body,'html.parser'))
  document.body['data-page']='story'
- (OUT/filename).write_text(str(document))
+ (OUT/filename).write_text(vector_arrows(str(document)))
 print(f'Built five preview pages and {len(STORY_PAGES)} individual impact stories.')
