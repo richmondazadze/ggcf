@@ -1,0 +1,158 @@
+[
+  {
+    "fallback": 0,
+    "fonts": [
+      "Switzer-Regular, Switzer, system-ui, sans-serif",
+      "ClashDisplay-Semibold, \"Clash Display\", system-ui, sans-serif",
+      "Switzer-Medium, Switzer, system-ui, sans-serif"
+    ],
+    "height": 5203,
+    "id": "21O-0",
+    "overflow": [],
+    "width": 1440
+  },
+  {
+    "fallback": 0,
+    "fonts": [
+      "ClashDisplay-Semibold, \"Clash Display\", system-ui, sans-serif",
+      "Switzer-Medium, Switzer, system-ui, sans-serif",
+      "Switzer-Regular, Switzer, system-ui, sans-serif"
+    ],
+    "height": 7702,
+    "id": "2AE-0",
+    "overflow": [],
+    "width": 390
+  },
+  {
+    "fallback": 0,
+    "fonts": [
+      "Switzer-Regular, Switzer, system-ui, sans-serif",
+      "ClashDisplay-Semibold, \"Clash Display\", system-ui, sans-serif",
+      "Switzer-Medium, Switzer, system-ui, sans-serif"
+    ],
+    "height": 8508,
+    "id": "2KM-0",
+    "overflow": [],
+    "width": 1440
+  },
+  {
+    "fallback": 0,
+    "fonts": [
+      "ClashDisplay-Semibold, \"Clash Display\", system-ui, sans-serif",
+      "Switzer-Medium, Switzer, system-ui, sans-serif",
+      "Switzer-Regular, Switzer, system-ui, sans-serif"
+    ],
+    "height": 15002,
+    "id": "2WC-0",
+    "overflow": [],
+    "width": 390
+  },
+  {
+    "fallback": 0,
+    "fonts": [
+      "Switzer-Regular, Switzer, system-ui, sans-serif",
+      "ClashDisplay-Semibold, \"Clash Display\", system-ui, sans-serif",
+      "Switzer-Medium, Switzer, system-ui, sans-serif"
+    ],
+    "height": 3930,
+    "id": "364-0",
+    "overflow": [],
+    "width": 1440
+  },
+  {
+    "fallback": 0,
+    "fonts": [
+      "ClashDisplay-Semibold, \"Clash Display\", system-ui, sans-serif",
+      "Switzer-Medium, Switzer, system-ui, sans-serif",
+      "Switzer-Regular, Switzer, system-ui, sans-serif"
+    ],
+    "height": 5675,
+    "id": "3DY-0",
+    "overflow": [],
+    "width": 390
+  },
+  {
+    "fallback": 0,
+    "fonts": [
+      "Switzer-Regular, Switzer, system-ui, sans-serif",
+      "ClashDisplay-Semibold, \"Clash Display\", system-ui, sans-serif",
+      "Switzer-Medium, Switzer, system-ui, sans-serif"
+    ],
+    "height": 2743,
+    "id": "3L7-0",
+    "overflow": [],
+    "width": 1440
+  },
+  {
+    "fallback": 0,
+    "fonts": [
+      "ClashDisplay-Semibold, \"Clash Display\", system-ui, sans-serif",
+      "Switzer-Medium, Switzer, system-ui, sans-serif",
+      "Switzer-Regular, Switzer, system-ui, sans-serif"
+    ],
+    "height": 4171,
+    "id": "3RV-0",
+    "overflow": [],
+    "width": 390
+  },
+  {
+    "fallback": 0,
+    "fonts": [
+      "Switzer-Regular, Switzer, system-ui, sans-serif",
+      "ClashDisplay-Semibold, \"Clash Display\", system-ui, sans-serif",
+      "Switzer-Medium, Switzer, system-ui, sans-serif"
+    ],
+    "height": 1686,
+    "id": "3WU-0",
+    "overflow": [],
+    "width": 1440
+  },
+  {
+    "fallback": 0,
+    "fonts": [
+      "ClashDisplay-Semibold, \"Clash Display\", system-ui, sans-serif",
+      "Switzer-Medium, Switzer, system-ui, sans-serif",
+      "Switzer-Regular, Switzer, system-ui, sans-serif"
+    ],
+    "height": 1762,
+    "id": "404-0",
+    "overflow": [],
+    "width": 390
+  },
+  {
+    "fallback": 0,
+    "fonts": [
+      "Switzer-Regular, Switzer, system-ui, sans-serif",
+      "ClashDisplay-Semibold, \"Clash Display\", system-ui, sans-serif",
+      "Switzer-Medium, Switzer, system-ui, sans-serif"
+    ],
+    "height": 850,
+    "id": "42J-0",
+    "overflow": [],
+    "width": 1440
+  },
+  {
+    "fallback": 0,
+    "fonts": [
+      "ClashDisplay-Semibold, \"Clash Display\", system-ui, sans-serif",
+      "Switzer-Medium, Switzer, system-ui, sans-serif",
+      "Switzer-Regular, Switzer, system-ui, sans-serif"
+    ],
+    "height": 1040,
+    "id": "443-0",
+    "overflow": [],
+    "width": 390
+  },
+  {
+    "fallback": 0,
+    "fonts": [
+      "Switzer-Medium, Switzer, system-ui, sans-serif",
+      "ClashDisplay-Semibold, \"Clash Display\", system-ui, sans-serif",
+      "Switzer-Regular, Switzer, system-ui, sans-serif"
+    ],
+    "height": 1311,
+    "id": "46B-0",
+    "overflow": [],
+    "width": 1440
+  }
+]

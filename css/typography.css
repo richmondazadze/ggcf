@@ -1,0 +1,7 @@
+/* Shared typography; icon elements retain their icon font families. */
+html body { font-family: 'Switzer', Arial, sans-serif !important; }
+html body [class*="display-"], html body h1, html body h2, html body h3, html body h4, html body h5, html body h6 { font-family: 'Switzer', Arial, sans-serif !important; font-weight: 500 !important; }
+html body .btn, html body button, html body input, html body select, html body textarea { font-family: 'Switzer', Arial, sans-serif !important; }
+html body .btn, html body button { font-weight: 500 !important; }
+html body .navbar-brand .logo-main { font-family: 'Clash Display', 'Switzer', sans-serif !important; font-weight: 600 !important; letter-spacing: -0.035em; }
+html body .navbar-brand .logo-sub { font-family: 'Switzer', Arial, sans-serif !important; font-weight: 500 !important; }

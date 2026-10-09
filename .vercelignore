@@ -1,0 +1,8 @@
+.git/
+.DS_Store
+design/
+preview/qa/
+preview/content/
+preview/build.py
+preview/*.md
+preview/original-page-hashes.json

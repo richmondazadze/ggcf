@@ -1,0 +1,11 @@
+{
+  "pages": {
+    "index.html": "copy, assets, anchors, headings and IDs passed",
+    "about.html": "copy, assets, anchors, headings and IDs passed",
+    "contact.html": "copy, assets, anchors, headings and IDs passed",
+    "404.html": "copy, assets, anchors, headings and IDs passed",
+    "donate.html": "copy, assets, anchors, headings and IDs passed"
+  },
+  "production_pages_unchanged": true,
+  "placeholder_dots_removed": true
+}

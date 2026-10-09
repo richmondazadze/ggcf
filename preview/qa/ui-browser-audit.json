@@ -1,0 +1,286 @@
+[
+  {
+    "file": "index.html",
+    "width": 1440,
+    "brokenImages": [],
+    "cardButtons": [
+      {
+        "left": 113,
+        "top": 3929
+      },
+      {
+        "left": 548,
+        "top": 3929
+      },
+      {
+        "left": 982,
+        "top": 3929
+      },
+      {
+        "left": 113,
+        "top": 4713
+      },
+      {
+        "left": 548,
+        "top": 4713
+      },
+      {
+        "left": 982,
+        "top": 4713
+      }
+    ],
+    "creatorIcons": 2,
+    "driveLinks": 0,
+    "overflow": false
+  },
+  {
+    "file": "about.html",
+    "width": 1440,
+    "brokenImages": [],
+    "cardButtons": [],
+    "creatorIcons": 2,
+    "driveLinks": 0,
+    "overflow": false
+  },
+  {
+    "file": "contact.html",
+    "width": 1440,
+    "brokenImages": [],
+    "cardButtons": [
+      {
+        "left": 113,
+        "top": 2109
+      },
+      {
+        "left": 548,
+        "top": 2109
+      },
+      {
+        "left": 982,
+        "top": 2109
+      }
+    ],
+    "creatorIcons": 2,
+    "driveLinks": 0,
+    "overflow": false
+  },
+  {
+    "file": "donate.html",
+    "width": 1440,
+    "brokenImages": [],
+    "cardButtons": [
+      {
+        "left": 113,
+        "top": 2461
+      }
+    ],
+    "creatorIcons": 2,
+    "driveLinks": 0,
+    "overflow": false
+  },
+  {
+    "file": "404.html",
+    "width": 1440,
+    "brokenImages": [],
+    "cardButtons": [],
+    "creatorIcons": 2,
+    "driveLinks": 0,
+    "overflow": false
+  },
+  {
+    "file": "story-christmas-at-the-orphanage-2022.html",
+    "width": 1440,
+    "brokenImages": [],
+    "cardButtons": [],
+    "creatorIcons": 2,
+    "driveLinks": 0,
+    "overflow": false
+  },
+  {
+    "file": "story-kumasi-childrens-home-2023.html",
+    "width": 1440,
+    "brokenImages": [],
+    "cardButtons": [],
+    "creatorIcons": 2,
+    "driveLinks": 0,
+    "overflow": false
+  },
+  {
+    "file": "story-maternal-child-health-2023.html",
+    "width": 1440,
+    "brokenImages": [],
+    "cardButtons": [],
+    "creatorIcons": 2,
+    "driveLinks": 0,
+    "overflow": false
+  },
+  {
+    "file": "story-new-amakom-school-2024.html",
+    "width": 1440,
+    "brokenImages": [],
+    "cardButtons": [],
+    "creatorIcons": 2,
+    "driveLinks": 0,
+    "overflow": false
+  },
+  {
+    "file": "story-missionaries-of-charity-2025.html",
+    "width": 1440,
+    "brokenImages": [],
+    "cardButtons": [],
+    "creatorIcons": 2,
+    "driveLinks": 0,
+    "overflow": false
+  },
+  {
+    "file": "story-school-water-project-2026.html",
+    "width": 1440,
+    "brokenImages": [],
+    "cardButtons": [],
+    "creatorIcons": 2,
+    "driveLinks": 0,
+    "overflow": false
+  },
+  {
+    "file": "index.html",
+    "width": 390,
+    "brokenImages": [],
+    "cardButtons": [
+      {
+        "left": 49,
+        "top": 3638
+      },
+      {
+        "left": 49,
+        "top": 3978
+      },
+      {
+        "left": 49,
+        "top": 4343
+      },
+      {
+        "left": 49,
+        "top": 5045
+      },
+      {
+        "left": 49,
+        "top": 5583
+      },
+      {
+        "left": 49,
+        "top": 6147
+      }
+    ],
+    "creatorIcons": 2,
+    "driveLinks": 0,
+    "overflow": false
+  },
+  {
+    "file": "about.html",
+    "width": 390,
+    "brokenImages": [],
+    "cardButtons": [],
+    "creatorIcons": 2,
+    "driveLinks": 0,
+    "overflow": false
+  },
+  {
+    "file": "contact.html",
+    "width": 390,
+    "brokenImages": [],
+    "cardButtons": [
+      {
+        "left": 49,
+        "top": 2326
+      },
+      {
+        "left": 49,
+        "top": 2665
+      },
+      {
+        "left": 49,
+        "top": 2978
+      }
+    ],
+    "creatorIcons": 2,
+    "driveLinks": 0,
+    "overflow": false
+  },
+  {
+    "file": "donate.html",
+    "width": 390,
+    "brokenImages": [],
+    "cardButtons": [
+      {
+        "left": 49,
+        "top": 2768
+      }
+    ],
+    "creatorIcons": 2,
+    "driveLinks": 0,
+    "overflow": false
+  },
+  {
+    "file": "404.html",
+    "width": 390,
+    "brokenImages": [],
+    "cardButtons": [],
+    "creatorIcons": 2,
+    "driveLinks": 0,
+    "overflow": false
+  },
+  {
+    "file": "story-christmas-at-the-orphanage-2022.html",
+    "width": 390,
+    "brokenImages": [],
+    "cardButtons": [],
+    "creatorIcons": 2,
+    "driveLinks": 0,
+    "overflow": false
+  },
+  {
+    "file": "story-kumasi-childrens-home-2023.html",
+    "width": 390,
+    "brokenImages": [],
+    "cardButtons": [],
+    "creatorIcons": 2,
+    "driveLinks": 0,
+    "overflow": false
+  },
+  {
+    "file": "story-maternal-child-health-2023.html",
+    "width": 390,
+    "brokenImages": [],
+    "cardButtons": [],
+    "creatorIcons": 2,
+    "driveLinks": 0,
+    "overflow": false
+  },
+  {
+    "file": "story-new-amakom-school-2024.html",
+    "width": 390,
+    "brokenImages": [],
+    "cardButtons": [],
+    "creatorIcons": 2,
+    "driveLinks": 0,
+    "overflow": false
+  },
+  {
+    "file": "story-missionaries-of-charity-2025.html",
+    "width": 390,
+    "brokenImages": [],
+    "cardButtons": [],
+    "creatorIcons": 2,
+    "driveLinks": 0,
+    "overflow": false
+  },
+  {
+    "file": "story-school-water-project-2026.html",
+    "width": 390,
+    "brokenImages": [],
+    "cardButtons": [],
+    "creatorIcons": 2,
+    "driveLinks": 0,
+    "overflow": false
+  }
+]

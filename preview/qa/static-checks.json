@@ -1,0 +1,30 @@
+{
+  "pages": {
+    "index.html": {
+      "original_paragraphs_preserved": true,
+      "local_links_assets_anchors": true,
+      "single_h1": true
+    },
+    "about.html": {
+      "original_paragraphs_preserved": true,
+      "local_links_assets_anchors": true,
+      "single_h1": true
+    },
+    "contact.html": {
+      "original_paragraphs_preserved": true,
+      "local_links_assets_anchors": true,
+      "single_h1": true
+    },
+    "404.html": {
+      "original_paragraphs_preserved": true,
+      "local_links_assets_anchors": true,
+      "single_h1": true
+    },
+    "donate.html": {
+      "original_paragraphs_preserved": true,
+      "local_links_assets_anchors": true,
+      "single_h1": true
+    }
+  },
+  "original_pages_unchanged": true
+}
