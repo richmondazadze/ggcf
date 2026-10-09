@@ -262,14 +262,14 @@ def vector_arrows(html,filename):
  names={'twitter:card':'summary_large_image','twitter:title':title,'twitter:description':description,'twitter:image':image,'twitter:image:alt':properties['og:image:alt']}
  for key,value in properties.items():document.head.append(document.new_tag('meta',attrs={'property':key,'content':value}))
  for key,value in names.items():document.head.append(document.new_tag('meta',attrs={'name':key,'content':value}))
- paths={'↗':'M5 19 19 5M5 5h14v14','↑':'M12 20V4M5 11l7-7 7 7','←':'M20 12H4M11 5l-7 7 7 7','→':'M4 12h16M13 5l7 7-7 7'}
+ paths={'▶':'M8 5 19 12 8 19Z','↗':'M5 19 19 5M5 5h14v14','↑':'M12 20V4M5 11l7-7 7 7','←':'M20 12H4M11 5l-7 7 7 7','→':'M4 12h16M13 5l7 7-7 7'}
  for node in list(document.find_all(string=True)):
   if node.parent.name in ['script','style']:continue
   if not any(char in str(node) for char in paths):continue
-  for part in re.split('([↗↑←→])',str(node)):
+  for part in re.split('([↗↑←→▶])',str(node)):
    if not part:continue
    if part in paths:
-    icon=BeautifulSoup(f'<svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="{paths[part]}"></path></svg>','html.parser').svg
+    icon=BeautifulSoup(f'<svg class="{"play-icon" if part=="▶" else "arrow-icon"}" viewBox="0 0 24 24" fill="{"currentColor" if part=="▶" else "none"}" stroke="{"none" if part=="▶" else "currentColor"}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="{paths[part]}"></path></svg>','html.parser').svg
     node.insert_before(icon)
    else:node.insert_before(NavigableString(part))
   node.extract()

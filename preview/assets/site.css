@@ -41,3 +41,6 @@
 
 /* Vector arrows avoid platform-specific emoji presentation. */
 .arrow-icon{display:inline-block;width:20px;height:20px;flex-shrink:0;vertical-align:middle}.carousel-controls button,.back-top{display:inline-flex;align-items:center;justify-content:center}.carousel-controls .arrow-icon{width:24px;height:24px}.story-back .arrow-icon{margin-right:6px}
+
+/* Play controls use a monochrome vector triangle on every platform. */
+.play-icon{display:block;width:24px;height:24px;margin-left:3px;flex-shrink:0}.video-play{display:grid;place-items:center;color:var(--ink)}.video-play .play-icon{width:32px;height:32px}
