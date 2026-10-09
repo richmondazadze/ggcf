@@ -31,9 +31,9 @@ def creator_socials():
  return '<span class="creator-socials">'+''.join(f'<a href="{url}" target="_blank" rel="noopener noreferrer" aria-label="Richmond Azadze on {name}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">{path}</svg></a>' for (name,_,path),url in zip(SOCIALS[:2],urls))+'</span>'
 def brand():return '<a class="brand" href="index.html" aria-label="Good God Charity Foundation home"><img src="../img/gglogo.png" width="44" height="44" alt="Good God Charity Foundation Logo"><span><span class="wordmark">GOOD GOD</span><span class="brand-sub">CHARITY FOUNDATION</span></span></a>'
 def header(n):
- links=''.join(f'<a href="{p}.html"'+(' aria-current="page"' if p==n else '')+f'>{label}</a>' for p,label in [('index','Home'),('about','About'),('contact','Contact')])
+ links=''.join(f'<a href="{p}.html"'+(' aria-current="page"' if p==n else '')+f'>{label}</a>' for p,label in [('index','Home'),('about','About'),('team','Our Team'),('contact','Contact')])
  return f'''<a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="topbar"><div class="shell"><span>Ejisu-Kumasi, Ghana</span><a href="mailto:goodgodcharityfoundation@gmail.com">goodgodcharityfoundation@gmail.com</a><span class="follow">Follow us:</span>{socials()}</div></div><div class="nav-shell shell">{brand()}<button class="menu-toggle" aria-controls="site-menu" aria-expanded="false" aria-label="Open menu"><span></span><span></span></button><nav id="site-menu" aria-label="Main navigation">{links}<a class="button button-primary" href="donate.html">Donate Now<span aria-hidden="true">↗</span></a><div class="menu-details"><span>Ejisu-Kumasi, Ghana</span><a href="mailto:goodgodcharityfoundation@gmail.com">goodgodcharityfoundation@gmail.com</a><span>Follow us:</span>{socials()}</div></nav></div></header>'''
-def footer():return f'''<footer class="site-footer"><div class="shell"><div class="footer-grid"><div>{brand()}<p>Let's put smiles on the faces of those who need it most.</p>{socials()}</div><div><h2>Contact Info</h2><address>Ejisu-Kumasi, Ghana<br><a href="tel:+233595603637">+233(0)595603637</a><br><a href="mailto:goodgodcharityfoundation@gmail.com">goodgodcharityfoundation@gmail.com</a></address></div><div><h2>Quick Links</h2><a href="index.html">Home</a><a href="about.html">About Us</a><a href="contact.html">Contact Us</a><a href="donate.html">Donate</a></div></div><div class="footer-bottom"><span>© <a href="index.html">Good God Charity Foundation</a>, All Right Reserved.</span><span class="creator-credit"><span>Built By <a href="https://richmondazadze.com" target="_blank" rel="noopener noreferrer">Richmond Azadze</a></span>{creator_socials()}</span></div></div></footer><button class="back-top" aria-label="Back to top">↑</button>'''
+def footer():return f'''<footer class="site-footer"><div class="shell"><div class="footer-grid"><div>{brand()}<p>Let's put smiles on the faces of those who need it most.</p>{socials()}</div><div><h2>Contact Info</h2><address>Ejisu-Kumasi, Ghana<br><a href="tel:+233595603637">+233(0)595603637</a><br><a href="mailto:goodgodcharityfoundation@gmail.com">goodgodcharityfoundation@gmail.com</a></address></div><div><h2>Quick Links</h2><a href="index.html">Home</a><a href="about.html">About Us</a><a href="team.html">Our Team</a><a href="contact.html">Contact Us</a><a href="donate.html">Donate</a></div></div><div class="footer-bottom"><span>© <a href="index.html">Good God Charity Foundation</a>, All Right Reserved.</span><span class="creator-credit"><span>Built By <a href="https://richmondazadze.com" target="_blank" rel="noopener noreferrer">Richmond Azadze</a></span>{creator_socials()}</span></div></div></footer><button class="back-top" aria-label="Back to top">↑</button>'''
 def styles(e):return dict((x.split(':',1)[0].strip(),x.split(':',1)[1].strip()) for x in e.get('style','').split(';') if ':' in x)
 def setstyle(e,d):e['style']=';'.join(f'{k}:{v}' for k,v in d.items())
 def destination(label,n,el):
@@ -160,6 +160,7 @@ def convert(markup,n,alt=False):
   for h in section.find_all('h3'):h['id']='child-healthcare' if h.get_text(strip=True)=='Child Healthcare' else 'educational-support'
  return root
 STORY_PAGES=[]
+TEAM_BODY=""
 def story_picture(name,alt,eager=False,full=False):
  paths=sorted((OUT/'assets/stories').glob(name+'-*.webp'),key=lambda p:int(p.stem.rsplit('-',1)[1]))
  if not paths:raise FileNotFoundError(name)
@@ -232,6 +233,9 @@ def refine(root,n):
    if i:slide['inert']=''
    slide.append(img);overlay=s.new_tag('div',attrs={'class':'hero-overlay','aria-hidden':'true'});slide.append(overlay);slide.append(content);wrap.append(slide.extract())
   controls['class']=['carousel-controls','shell'];wrap.append(controls.extract())
+  latest=json.loads((OUT/'content/impact-stories.json').read_text())[0]
+  feature=BeautifulSoup(f'<section class="section latest-project" aria-labelledby="latest-project-title"><div class="shell latest-project-grid"><a class="latest-project-photo" href="story-{latest["slug"]}.html" aria-label="Read the latest project story">{story_picture(latest["image"],latest["alt"],full=True)}</a><div class="flow" data-reveal><p class="eyebrow">Latest Project · 2026</p><p class="project-complete">Completed &amp; handed over</p><h2 id="latest-project-title">Water for a School in Asonsuaso</h2><p>The project is now complete and has been handed over.</p><p>Follow the journey from the first visit through construction to the final handover.</p><a class="button button-primary" href="story-{latest["slug"]}.html">Read the story <span aria-hidden="true">↗</span></a></div></div></section>','html.parser').section
+  root.select_one('.hero-carousel').find_next_sibling('section').insert_after(feature)
  if n=='about':
   impact_journal(root)
   founder=root.select_one('[data-section="founder"]');profile=founder.find('img').parent;profile['class']+=['founder-profile'];profile['id']='founder-profile';img=profile.find('img');img['src']='assets/theo_mensah.webp';img['srcset']='assets/theo_mensah-480.webp 480w, assets/theo_mensah.webp 800w';img['sizes']='(max-width: 760px) calc(100vw - 50px), 432px';img['width']=800;img['height']=800;img.attrs.pop('style',None);img['class']=['founder-portrait','photograph'];img['data-parallax']=''
@@ -284,6 +288,12 @@ for width in [480,800]:
  if not target.exists() or target.stat().st_mtime<(OUT/'assets/theo_mensah.png').stat().st_mtime:portrait.resize((width,width),Image.Resampling.LANCZOS).save(target,'WEBP',quality=91)
 for n in ORIGINAL:
  root=refine(convert((ROOT/'design/pages'/f'{n}-desktop.html').read_text(),n),n)
+ if n=='about':
+  team=root.select_one('[data-section="team"]').extract()
+  team.select_one('.eyebrow').decompose();team.find('h2').decompose();team['aria-labelledby']='team-title'
+  TEAM_BODY=f'<div class="page-content"><header class="team-intro shell"><a class="story-back" href="about.html">← About the foundation</a><h1 id="team-title">Our Team</h1></header>{team}</div>'
+  teaser=BeautifulSoup('<section class="section team-teaser" aria-labelledby="meet-team-title"><div class="shell"><div><p class="eyebrow">Our Team</p><h2 id="meet-team-title">Meet Our Team</h2><p>Dedicated leaders and coordinators working together to bring hope and change.</p></div><a class="button button-outline" href="team.html">Meet the team <span aria-hidden="true">↗</span></a></div></section>','html.parser').section
+  root.append(teaser)
  root=BeautifulSoup(str(root),'html.parser').find()
  # All top-level sections have an accessible name from their visible title.
  for i,sec in enumerate(root.find_all('section')):
@@ -294,6 +304,14 @@ for n in ORIGINAL:
  title=ORIGINAL[n].title.get_text();description=ORIGINAL[n].find('meta',attrs={'name':'description'})
  html=f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>{escape(title)}</title><meta name="description" content="{escape(description.get('content','') if description else '')}"><link rel="icon" href="../img/favicon.png"><link rel="preload" href="../fonts/switzer-500.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="../fonts/clash-display-600.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="../css/fonts.css"><link rel="stylesheet" href="assets/site.css?v={hashlib.sha256((OUT/'assets/site.css').read_bytes()).hexdigest()[:10]}"><script defer src="assets/site.js?v={hashlib.sha256((OUT/'assets/site.js').read_bytes()).hexdigest()[:10]}"></script></head><body data-page="{n}">{header(n)}<main id="main" tabindex="-1">{root}</main>{footer()}</body></html>'''
  (OUT/(n+'.html')).write_text(vector_arrows(html,n+'.html'))
+team_doc=BeautifulSoup((OUT/'about.html').read_text(),'html.parser')
+team_doc.title.string='Our Team | Good God Charity Foundation'
+team_doc.find('meta',attrs={'name':'description'})['content']='Meet the leaders and coordinators of Good God Charity Foundation.'
+for meta in team_doc.select('meta[property^="og:"],meta[name^="twitter:"]'):meta.decompose()
+team_doc.main.clear();team_doc.main.append(BeautifulSoup(TEAM_BODY,'html.parser'))
+team_doc.body['data-page']='team'
+team_doc.select_one('.site-header').replace_with(BeautifulSoup(header('team'),'html.parser').header)
+(OUT/'team.html').write_text(vector_arrows(str(team_doc),'team.html'))
 for filename,title,body in STORY_PAGES:
  document=BeautifulSoup((OUT/'about.html').read_text(),'html.parser')
  document.title.string=title+' | Good God Charity Foundation'

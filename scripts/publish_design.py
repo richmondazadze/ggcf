@@ -31,4 +31,4 @@ for page in sorted((ROOT/'preview').glob('*.html')):
     if page.name=='404.html':continue
     entry=ET.SubElement(urls,'{'+namespace+'}url');ET.SubElement(entry,'{'+namespace+'}loc').text=ORIGIN+route(page.name)
 ET.indent(urls);ET.ElementTree(urls).write(ROOT/'sitemap.xml',encoding='utf-8',xml_declaration=True)
-print('Promoted 11 pages with production paths, canonical URLs and sharing metadata.')
+print('Promoted all preview pages with production paths, canonical URLs and sharing metadata.')
