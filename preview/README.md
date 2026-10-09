@@ -10,7 +10,7 @@ Automatic two-photo background hero with overlay, fixed 3.5-second slide interva
 
 ## Existing service connections
 
-The donation form opens the existing PayPal.me recipient with the entered USD amount. The monthly donation option is omitted. Donation type/name/email are not saved or transmitted by the preview; PayPal handles the actual transaction. The contact form retains its existing Formspree endpoint. No payment or contact submission was performed during validation. The original Google Drive story video loads only after Play is pressed.
+The donation form opens the existing PayPal.me recipient with the entered USD amount. The monthly donation option is omitted. Donation type/name/email are not saved or transmitted by the preview; PayPal handles the actual transaction. The contact form retains its existing Formspree endpoint. No payment or contact submission was performed during validation. The homepage and four project films use native HTML5 players with local MP4 files, loaded only after Play is pressed. The first click starts playback, with a loading message while buffering. Native dimensions preserve portrait and landscape framing; closing a project film stops playback.
 
 ## Build and verification
 
@@ -28,7 +28,7 @@ Removed the hero play/pause control and loading-style progress bar. Slides advan
 
 Impact stories: About now presents six uniform landscape cards, ordered newest first, linking to `story-*.html`. Full original copy is retained on each detail page. Rebuild with `python3 preview/build.py`. Shared content source: https://drive.google.com/drive/folders/1-JJmocMdYsnGJewq_d9S8AUYJDHvzmAA (2022–2023, 2024, 2025, completed 2026). New event narratives and photos must be matched before publishing additional stories.
 
-2026-10-09: Added 2024 New Amakom, 2025 Missionaries of Charity Sisters, and completed 2026 Asonsuaso school water project stories. New content is maintained in `content/impact-stories.json`; provenance and outstanding factual details are in `content/story-sources.md`. 2026 includes four chapters, real construction photography, initial/handover film stills, and click-to-load Drive films without external Drive links. All six story cards appear newest first.
+2026-10-09: Added 2024 New Amakom, 2025 Missionaries of Charity Sisters, and completed 2026 Asonsuaso school water project stories. New content is maintained in `content/impact-stories.json`; provenance and outstanding factual details are in `content/story-sources.md`. 2026 includes four chapters, real construction photography, initial/handover film stills, and click-to-load native films without Google Drive controls or links. All six story cards appear newest first.
 
 ## Production publishing
 

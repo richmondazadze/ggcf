@@ -44,3 +44,6 @@
 
 /* Play controls use a monochrome vector triangle on every platform. */
 .play-icon{display:block;width:24px;height:24px;margin-left:3px;flex-shrink:0}.video-play{display:grid;place-items:center;color:var(--ink)}.video-play .play-icon{width:32px;height:32px}
+
+/* Native films retain source proportions and readable mobile controls. */
+.native-film-container{overflow:visible!important;border-radius:0!important;min-width:0;position:relative;background:var(--ink)}.native-film{display:block;width:100%;height:auto;max-height:78svh;object-fit:contain;background:#000;outline-offset:3px}.film-status{padding:12px 16px;font-size:14px;line-height:1.5;color:var(--paper);background:var(--ink)}

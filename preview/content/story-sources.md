@@ -24,3 +24,6 @@ Added 2026-10-09 to the isolated preview. Existing website copy remains intact.
 - Four films linked/embedded: initial state, job start, progress, final project. They load only on user interaction; external Drive fallback provided.
 - Full official school name, precise handover date, project cost, water testing/results, beneficiary totals, maintenance arrangements, and named quotations remain unconfirmed and are omitted.
 - The narrative separates observed events from general purpose; it does not claim measured health/attendance improvements.
+
+
+Film delivery update: the owner approved downloading all five original Drive films. Website copies are H.264/AAC MP4 with fast-start metadata, maximum 1280px dimensions and 30fps. HDR handover footage is tone-mapped to SDR BT.709. Drive source links remain here for provenance; visitors use native responsive players with no Drive shortcut. Source masters remain outside the repository.

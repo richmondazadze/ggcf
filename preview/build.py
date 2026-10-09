@@ -176,7 +176,7 @@ def water_story(item):
   if c.get('image') and c['image']!=item['image']:
    figure=f'<figure class="water-photo">{story_picture(c["image"],c["caption"],full=True)}<figcaption>{escape(c["caption"])}</figcaption></figure>'
   sections.append(f'<section class="water-chapter" aria-labelledby="{c["id"]}-title"><div class="flow" data-reveal><h2 id="{c["id"]}-title">{escape(c["title"])}</h2>{paragraphs}</div>{figure}</section>')
-  films.append(f'<details class="water-film" name="water-project-films"><summary>{escape(c["videoLabel"])}<span aria-hidden="true">+</span></summary><div class="story-film" data-video-container><button class="story-film-play" data-story-video="{c["video"]}" aria-label="{escape(c["videoLabel"],quote=True)}"><span class="film-play-icon" aria-hidden="true">▶</span><span>Play film</span></button></div></details>')
+  films.append(f'<details class="water-film" name="water-project-films"><summary>{escape(c["videoLabel"])}<span aria-hidden="true">+</span></summary><div class="story-film" data-video-container><button class="story-film-play" data-story-video="{c["id"]}" aria-label="{escape(c["videoLabel"],quote=True)}"><span class="film-play-icon" aria-hidden="true">▶</span><span>Play film</span></button></div></details>')
  return f'<div class="page-content water-story"><header class="water-intro shell"><a class="story-back" href="about.html#impact-stories-section-title">← Our Impact</a><div class="water-heading"><div class="flow"><p class="eyebrow">{escape(item["date"])}</p><h1>{title}</h1></div><figure>{cover}<figcaption>{escape(item["chapters"][-1]["caption"])}</figcaption></figure></div></header><article class="water-reading"><p class="water-deck">{escape(item["intro"])}</p>'+''.join(sections)+'<section class="water-films" aria-labelledby="water-films-title"><h2 id="water-films-title">Watch the project journey</h2>'+''.join(films)+'</section><div class="story-actions"><a class="button button-primary" href="donate.html">Support Our Mission <span aria-hidden="true">↗</span></a><a class="story-back" href="about.html#impact-stories-section-title">← All stories</a></div></article></div>'
 
 def additional_stories():
@@ -192,7 +192,7 @@ def additional_stories():
    if c.get('image'):figure=f'<figure class="story-documentary-photo">{story_picture(c["image"],c["caption"],full=True)}<figcaption>{escape(c["caption"])}</figcaption></figure>'
    video=''
    if c.get('video'):
-    video=f'<div class="story-film" data-video-container><button class="story-film-play" data-story-video="{c["video"]}" aria-label="{escape(c["videoLabel"],quote=True)}"><span class="film-play-icon" aria-hidden="true">▶</span><span>{escape(c["videoLabel"])}</span></button></div>'
+    video=f'<div class="story-film" data-video-container><button class="story-film-play" data-story-video="{c["id"]}" aria-label="{escape(c["videoLabel"],quote=True)}"><span class="film-play-icon" aria-hidden="true">▶</span><span>{escape(c["videoLabel"])}</span></button></div>'
    chapters.append(f'<section class="story-chapter" id="{c["id"]}" aria-labelledby="{c["id"]}-title"><div class="story-body flow" data-reveal><h2 id="{c["id"]}-title">{escape(c["title"])}</h2>{paragraphs}</div>{figure}<div class="story-body">{video}</div></section>')
   cover=story_picture(item['image'],item['alt'],True)
   status='<span class="story-status">Completed & handed over</span>' if item['year']==2026 else ''
