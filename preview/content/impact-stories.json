@@ -3,11 +3,11 @@
     "slug": "school-water-project-2026",
     "year": 2026,
     "date": "2026 · Completed & handed over",
-    "title": "Water for a School in Asonsuaso: From First Visit to Handover",
+    "title": "Clean water for 120+ school children and the Asonsuaso community",
     "category": "Community infrastructure",
     "image": "2026-handover",
     "alt": "Ribbon-cutting at the completed school water installation",
-    "intro": "A visit can reveal a need. Returning to meet that need is where the work begins. In 2026, Good God Charity Foundation followed a school water project in Asonsuaso through its initial assessment, construction, progress, and final handover. The project is now complete and has been handed over.",
+    "intro": "The completed water project supports 120+ school children and the Asonsuaso community. A visit can reveal a need. Returning to meet that need is where the work begins. In 2026, Good God Charity Foundation followed a school water project in Asonsuaso through its initial assessment, construction, progress, and final handover. The project is now complete and has been handed over.",
     "chapters": [
       {
         "id": "the-need",
@@ -58,7 +58,8 @@
         "videoLabel": "Watch the completed project and handover"
       }
     ],
-    "sourceFolder": "https://drive.google.com/drive/folders/1Hazq4uFHm5C4UXOI-LSWClFsOF9hp1gb"
+    "sourceFolder": "https://drive.google.com/drive/folders/1Hazq4uFHm5C4UXOI-LSWClFsOF9hp1gb",
+    "impact": "120+ school children and the Asonsuaso community"
   },
   {
     "slug": "missionaries-of-charity-2025",
@@ -68,7 +69,7 @@
     "category": "Child support",
     "image": "2025-donation",
     "alt": "GGCF volunteers arranging donated supplies at Missionaries of Charity Sisters",
-    "intro": "In December 2025, Good God Charity Foundation brought its giving campaign to Missionaries of Charity Sisters in Ashtown-Mbrom, with a focus on supporting children with special needs.",
+    "intro": "60 children with special needs were supported through this visit. In December 2025, Good God Charity Foundation brought its giving campaign to Missionaries of Charity Sisters in Ashtown-Mbrom, with a focus on supporting children with special needs.",
     "chapters": [
       {
         "id": "coming-together",
@@ -87,7 +88,8 @@
         ]
       }
     ],
-    "sourceFolder": "https://drive.google.com/drive/folders/1vOkKVBCL4b1pPQXGH4aMK9lwfbjfCgHk"
+    "sourceFolder": "https://drive.google.com/drive/folders/1vOkKVBCL4b1pPQXGH4aMK9lwfbjfCgHk",
+    "impact": "60 children with special needs supported"
   },
   {
     "slug": "new-amakom-school-2024",
@@ -97,7 +99,7 @@
     "category": "Education support",
     "image": "2024-outreach",
     "alt": "GGCF volunteer sharing items with pupils during the New Amakom school visit",
-    "intro": "In December 2024, Good God Charity Foundation visited New Amakom Primary School. The outreach brought volunteers and pupils together for a donation event centred on practical support and personal connection.",
+    "intro": "600+ students were supported with educational materials. In December 2024, Good God Charity Foundation visited New Amakom Primary School. The outreach brought volunteers and pupils together for a donation event centred on practical support and personal connection.",
     "chapters": [
       {
         "id": "at-the-school",
@@ -115,9 +117,13 @@
         "paragraphs": [
           "The school visit added an education-focused chapter to the foundation’s earlier orphanage and healthcare donations. It reflected the same commitment to bringing support to children in the places that care for and educate them.",
           "The photographs preserve the people and setting of that day. Together, they tell the story of a school community visited, pupils engaged, and support shared."
-        ]
+        ],
+        "video": "main",
+        "videoKey": "main",
+        "videoLabel": "Watch the school support film"
       }
     ],
-    "sourceFolder": "https://drive.google.com/drive/folders/1GgKLTFzqsdFI1BCqAm0YhmL7TTddulde"
+    "sourceFolder": "https://drive.google.com/drive/folders/1GgKLTFzqsdFI1BCqAm0YhmL7TTddulde",
+    "impact": "600+ students supported with educational materials"
   }
 ]

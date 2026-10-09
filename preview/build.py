@@ -184,7 +184,8 @@ def additional_stories():
  cards=[]
  for item in json.loads((OUT/'content/impact-stories.json').read_text()):
   href='story-'+item['slug']+'.html';title=escape(item['title']);date=escape(item['date']);intro=escape(item['intro']);image=story_picture(item['image'],item['alt'])
-  cards.append(f'<article class="card story-card" data-reveal><a class="story-image-link" href="{href}" aria-label="{title}">{image}</a><div class="story-card-copy"><p class="eyebrow">{date}</p><h3><a href="{href}">{title}</a></h3><a class="story-link" href="{href}">Read story <span aria-hidden="true">↗</span></a></div></article>')
+  impact=f'<p class="story-impact">{escape(item.get("impact",""))}</p>' if item.get('impact') else ''
+  cards.append(f'<article class="card story-card" data-reveal><a class="story-image-link" href="{href}" aria-label="{title}">{image}</a><div class="story-card-copy"><p class="eyebrow">{date}</p><h3><a href="{href}">{title}</a></h3>{impact}<a class="story-link" href="{href}">Read story <span aria-hidden="true">↗</span></a></div></article>')
   nav=''.join(f'<a href="#{c["id"]}">{escape(c["title"])}</a>' for c in item['chapters'])
   chapters=[]
   for c in item['chapters']:
@@ -193,7 +194,7 @@ def additional_stories():
    if c.get('image'):figure=f'<figure class="story-documentary-photo">{story_picture(c["image"],c["caption"],full=True)}<figcaption>{escape(c["caption"])}</figcaption></figure>'
    video=''
    if c.get('video'):
-    video=f'<div class="story-film" data-video-container><button class="story-film-play" data-story-video="{c["id"]}" aria-label="{escape(c["videoLabel"],quote=True)}"><span class="film-play-icon" aria-hidden="true">▶</span><span>{escape(c["videoLabel"])}</span></button></div>'
+    video=f'<div class="story-film" data-video-container><button class="story-film-play" data-story-video="{c.get("videoKey",c["id"])}" aria-label="{escape(c["videoLabel"],quote=True)}"><span class="film-play-icon" aria-hidden="true">▶</span><span>{escape(c["videoLabel"])}</span></button></div>'
    chapters.append(f'<section class="story-chapter" id="{c["id"]}" aria-labelledby="{c["id"]}-title"><div class="story-body flow" data-reveal><h2 id="{c["id"]}-title">{escape(c["title"])}</h2>{paragraphs}</div>{figure}<div class="story-body">{video}</div></section>')
   cover=story_picture(item['image'],item['alt'],True)
   status='<span class="story-status">Completed & handed over</span>' if item['year']==2026 else ''
@@ -234,7 +235,7 @@ def refine(root,n):
    slide.append(img);overlay=s.new_tag('div',attrs={'class':'hero-overlay','aria-hidden':'true'});slide.append(overlay);slide.append(content);wrap.append(slide.extract())
   controls['class']=['carousel-controls','shell'];wrap.append(controls.extract())
   latest=json.loads((OUT/'content/impact-stories.json').read_text())[0]
-  feature=BeautifulSoup(f'<section class="section latest-project" aria-labelledby="latest-project-title"><div class="shell latest-project-grid"><a class="latest-project-photo" href="story-{latest["slug"]}.html" aria-label="Read the latest project story">{story_picture(latest["image"],latest["alt"],full=True)}</a><div class="flow" data-reveal><p class="eyebrow">Latest Project · 2026</p><p class="project-complete">Completed &amp; handed over</p><h2 id="latest-project-title">Water for a School in Asonsuaso</h2><p>The project is now complete and has been handed over.</p><p>Follow the journey from the first visit through construction to the final handover.</p><a class="button button-primary" href="story-{latest["slug"]}.html">Read the story <span aria-hidden="true">↗</span></a></div></div></section>','html.parser').section
+  feature=BeautifulSoup(f'<section class="section latest-project" aria-labelledby="latest-project-title"><div class="shell latest-project-grid"><a class="latest-project-photo" href="story-{latest["slug"]}.html" aria-label="Read the latest project story">{story_picture(latest["image"],latest["alt"],full=True)}</a><div class="flow" data-reveal><p class="eyebrow">Latest Project · 2026</p><p class="project-complete">Completed &amp; handed over</p><h2 id="latest-project-title">{escape(latest["title"])}</h2><p>The project is now complete and has been handed over.</p><p>Follow the journey from the first visit through construction to the final handover.</p><a class="button button-primary" href="story-{latest["slug"]}.html">Read the story <span aria-hidden="true">↗</span></a></div></div></section>','html.parser').section
   root.select_one('.hero-carousel').find_next_sibling('section').insert_after(feature)
  if n=='about':
   impact_journal(root)
@@ -299,7 +300,9 @@ for n in ORIGINAL:
    img=card.find('img')
    if img:img['sizes']='(max-width: 760px) calc(100vw - 48px), (max-width: 1100px) calc((100vw - 104px) / 2), 410px'
 
-  TEAM_BODY=f'<div class="page-content"><header class="team-intro shell"><a class="story-back" href="about.html">← About the foundation</a><h1 id="team-title">Our Team</h1></header>{team}</div>'
+  founder=root.select_one('.founder-profile')
+  founder_spotlight=f'<section class="team-founder shell" aria-label="Founder and President">{founder.find("img")}{founder.select_one(".founder-identity")}</section>'
+  TEAM_BODY=f'<div class="page-content"><header class="team-intro shell"><a class="story-back" href="about.html">← About the foundation</a><h1 id="team-title">Our Team</h1></header>{founder_spotlight}{team}</div>'
   teaser=BeautifulSoup('<section class="section team-teaser" aria-labelledby="meet-team-title"><div class="shell"><div><p class="eyebrow">Our Team</p><h2 id="meet-team-title">Meet Our Team</h2><p>Dedicated leaders and coordinators working together to bring hope and change.</p></div><a class="button button-outline" href="team.html">Meet the team <span aria-hidden="true">↗</span></a></div></section>','html.parser').section
   root.append(teaser)
  root=BeautifulSoup(str(root),'html.parser').find()
