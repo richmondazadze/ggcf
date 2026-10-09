@@ -3,7 +3,7 @@ from pathlib import Path
 from bs4 import BeautifulSoup, NavigableString
 from html import escape
 from PIL import Image,ImageOps
-import re,json,hashlib
+import re,json,hashlib,os
 ROOT=Path(__file__).resolve().parent.parent
 OUT=ROOT/'preview'
 ORIGINAL={n:BeautifulSoup((ROOT/(n+'.html')).read_text(),'html.parser') for n in ['index','about','donate','contact','404']}
@@ -254,8 +254,14 @@ def refine(root,n):
  for img in root.find_all('img'):
   for child in reversed(list(img.contents)):img.insert_after(child.extract())
  return root
-def vector_arrows(html):
+def vector_arrows(html,filename):
  document=BeautifulSoup(html,'html.parser')
+ origin=os.environ.get('GGCF_SHARE_ORIGIN','https://goodgodcharityfoundation-git-codex-n-45ec37-richmond-s-projects.vercel.app').rstrip('/')
+ title=document.title.get_text();description=document.find('meta',attrs={'name':'description'})['content'];image=origin+'/preview/assets/og-ggcf.jpg'
+ properties={'og:title':title,'og:description':description,'og:type':'article' if filename.startswith('story-') else 'website','og:url':origin+'/preview/'+filename,'og:site_name':'Good God Charity Foundation','og:image':image,'og:image:secure_url':image,'og:image:type':'image/jpeg','og:image:width':'1200','og:image:height':'630','og:image:alt':'Good God Charity Foundation — Giving hope to those who need it the most. Schoolchildren at New Amakom.'}
+ names={'twitter:card':'summary_large_image','twitter:title':title,'twitter:description':description,'twitter:image':image,'twitter:image:alt':properties['og:image:alt']}
+ for key,value in properties.items():document.head.append(document.new_tag('meta',attrs={'property':key,'content':value}))
+ for key,value in names.items():document.head.append(document.new_tag('meta',attrs={'name':key,'content':value}))
  paths={'↗':'M5 19 19 5M5 5h14v14','↑':'M12 20V4M5 11l7-7 7 7','←':'M20 12H4M11 5l-7 7 7 7','→':'M4 12h16M13 5l7 7-7 7'}
  for node in list(document.find_all(string=True)):
   if node.parent.name in ['script','style']:continue
@@ -284,12 +290,13 @@ for n in ORIGINAL:
    sec['aria-labelledby']=h['id']
  title=ORIGINAL[n].title.get_text();description=ORIGINAL[n].find('meta',attrs={'name':'description'})
  html=f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>{escape(title)}</title><meta name="description" content="{escape(description.get('content','') if description else '')}"><link rel="icon" href="../img/favicon.png"><link rel="preload" href="../fonts/switzer-500.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="../fonts/clash-display-600.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="../css/fonts.css"><link rel="stylesheet" href="assets/site.css?v={hashlib.sha256((OUT/'assets/site.css').read_bytes()).hexdigest()[:10]}"><script defer src="assets/site.js?v={hashlib.sha256((OUT/'assets/site.js').read_bytes()).hexdigest()[:10]}"></script></head><body data-page="{n}">{header(n)}<main id="main" tabindex="-1">{root}</main>{footer()}</body></html>'''
- (OUT/(n+'.html')).write_text(vector_arrows(html))
+ (OUT/(n+'.html')).write_text(vector_arrows(html,n+'.html'))
 for filename,title,body in STORY_PAGES:
  document=BeautifulSoup((OUT/'about.html').read_text(),'html.parser')
  document.title.string=title+' | Good God Charity Foundation'
  document.find('meta',attrs={'name':'description'})['content']=title+' — Good God Charity Foundation impact story.'
+ for meta in document.select('meta[property^="og:"],meta[name^="twitter:"]'):meta.decompose()
  document.main.clear();document.main.append(BeautifulSoup(body,'html.parser'))
  document.body['data-page']='story'
- (OUT/filename).write_text(vector_arrows(str(document)))
+ (OUT/filename).write_text(vector_arrows(str(document),filename))
 print(f'Built five preview pages and {len(STORY_PAGES)} individual impact stories.')
