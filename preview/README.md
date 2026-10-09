@@ -29,3 +29,7 @@ Removed the hero play/pause control and loading-style progress bar. Slides advan
 Impact stories: About now presents six uniform landscape cards, ordered newest first, linking to `story-*.html`. Full original copy is retained on each detail page. Rebuild with `python3 preview/build.py`. Shared content source: https://drive.google.com/drive/folders/1-JJmocMdYsnGJewq_d9S8AUYJDHvzmAA (2022–2023, 2024, 2025, completed 2026). New event narratives and photos must be matched before publishing additional stories.
 
 2026-10-09: Added 2024 New Amakom, 2025 Missionaries of Charity Sisters, and completed 2026 Asonsuaso school water project stories. New content is maintained in `content/impact-stories.json`; provenance and outstanding factual details are in `content/story-sources.md`. 2026 includes four chapters, real construction photography, initial/handover film stills, and click-to-load Drive films without external Drive links. All six story cards appear newest first.
+
+## Production publishing
+
+Original page sources are preserved in `design/legacy-source/` so rebuilding does not import the promoted design back into itself. Run `python3 preview/build.py` to rebuild review pages, then `python3 scripts/publish_design.py` to promote them to the production routes. The publishing step fixes asset paths, production canonical/share URLs, robots metadata, and the sitemap. Preview pages remain available separately. Mobile Money recipient: Joyce Danso, matching the latest main-branch update.

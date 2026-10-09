@@ -6,7 +6,7 @@ from PIL import Image,ImageOps
 import re,json,hashlib,os
 ROOT=Path(__file__).resolve().parent.parent
 OUT=ROOT/'preview'
-ORIGINAL={n:BeautifulSoup((ROOT/(n+'.html')).read_text(),'html.parser') for n in ['index','about','donate','contact','404']}
+ORIGINAL={n:BeautifulSoup((ROOT/'design/legacy-source'/(n+'.html')).read_text(),'html.parser') for n in ['index','about','donate','contact','404']}
 PHOTO_CACHE={}
 def photo(src):
  if 'static.wixstatic.com' in src:src='img/carousel-1.jpg'
@@ -129,6 +129,9 @@ def convert(markup,n,alt=False):
    form['data-donation']='';form['action']='https://www.paypal.me/THEOPHILUSMENSAH669';form['method']='GET';amount=form.find(id='amount');amount['type']='number';amount['min']='0.01';amount['step']='0.01';amount['inputmode']='decimal';form.find(id='monthly').parent.decompose()
   else:form['data-contact']=''
   form['class']='form-stack';form['id']='contact-form' if n=='contact' else 'donate-form';fake.replace_with(form)
+ if n=='donate':
+  for text in root.find_all(string=True):
+   if str(text).strip()=='Name: Theophilus Mensah':text.replace_with('Name: Joyce Danso')
  if n=='index':
   hero=root.select_one('[data-section="home-hero"]');hero['class']+=['hero-slide'];hero['data-slide']='0'
   # Visible manual carousel controls replace the diagram's decorative arrows.

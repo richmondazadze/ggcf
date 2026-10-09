@@ -6,3 +6,4 @@ preview/content/
 preview/build.py
 preview/*.md
 preview/original-page-hashes.json
+scripts/
